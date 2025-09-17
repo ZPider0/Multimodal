@@ -11,9 +11,8 @@ setup(
     description="Multimodal ",  # Optional
     long_description=long_description,  # Optional
     long_description_content_type="text/markdown",  # Optional (see note above)
-    url="https://github.com/kritiksoman/Multimodal",  # Optional
-    author="Kritik Soman",  # Optional
-    author_email="kritiksoman2020@iitkalumni.org",  # Optional
+    url="https://github.com/tetratensor/Multimodal",  # Optional
+    author="tetratensor",  # Optional
     classifiers=[  # Optional
         "Development Status :: 3 - Alpha",
         # Indicate who your project is intended for
@@ -22,7 +21,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         # 'Programming Language :: Python :: 2.7 :: Only',
     ],
-    keywords="sample, setuptools, development",  # Optional
+    keywords="multimodal, setuptools, development",  # Optional
     packages=find_packages(),
     python_requires=">=2.7",
     include_package_data=True,  # to include manifest.in
